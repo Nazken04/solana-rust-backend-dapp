@@ -48,7 +48,6 @@ First, we use the spl-token CLI to create a new type of "dummy" token on Devnet 
 spl-token create-token
 ```
 
-![Create Token](screenshots/Снимок экрана 2025-08-21 183437.png)
 
 ### Step 2: Create an Account to Hold the New Tokens
 
@@ -58,7 +57,6 @@ We create an associated token account in our wallet to hold the tokens we're abo
 spl-token create-account <TOKEN_MINT_ADDRESS>
 ```
 
-![Create Token Account](screenshots/Снимок экрана 2025-08-21 183512.png)
 
 ### Step 3: Mint Tokens to Our Account
 
@@ -68,7 +66,6 @@ We mint 1,000 of our new tokens to our wallet, giving us something to stake.
 spl-token mint <TOKEN_MINT_ADDRESS> 1000
 ```
 
-![Mint Tokens](screenshots/Снимок экрана 2025-08-21 183530.png)
 
 ### Step 4: "Stake" Tokens Using the API
 
@@ -78,7 +75,6 @@ We call the `/stake` endpoint on our backend via the CLI. The backend acknowledg
 cargo run -- stake --user $(solana address) --amount 100
 ```
 
-![Stake Tokens](screenshots/Снимок экрана 2025-08-21 183702.png)
 
 ### Step 5: "Unstake" Tokens Using the API
 
@@ -88,5 +84,4 @@ Finally, we call the `/unstake` endpoint, proving the final piece of the API is 
 cargo run -- unstake --user $(solana address) --amount 50
 ```
 
-![Unstake Tokens](screenshots/Снимок экрана 2025-08-21 183720.png)
 
