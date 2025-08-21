@@ -48,7 +48,7 @@ First, we use the spl-token CLI to create a new type of "dummy" token on Devnet 
 spl-token create-token
 ```
 
-![Create Token](screenshots/token-creation.png)
+![Create Token](screenshots/Снимок экрана 2025-08-21 183437.png)
 
 ### Step 2: Create an Account to Hold the New Tokens
 
@@ -58,7 +58,7 @@ We create an associated token account in our wallet to hold the tokens we're abo
 spl-token create-account <TOKEN_MINT_ADDRESS>
 ```
 
-![Create Token Account](screenshots/token-account.png)
+![Create Token Account](screenshots/Снимок экрана 2025-08-21 183512.png)
 
 ### Step 3: Mint Tokens to Our Account
 
@@ -68,7 +68,7 @@ We mint 1,000 of our new tokens to our wallet, giving us something to stake.
 spl-token mint <TOKEN_MINT_ADDRESS> 1000
 ```
 
-![Mint Tokens](screenshots/token-minting.png)
+![Mint Tokens](screenshots/Снимок экрана 2025-08-21 183530.png)
 
 ### Step 4: "Stake" Tokens Using the API
 
@@ -78,7 +78,7 @@ We call the `/stake` endpoint on our backend via the CLI. The backend acknowledg
 cargo run -- stake --user $(solana address) --amount 100
 ```
 
-![Stake Tokens](screenshots/staking.png)
+![Stake Tokens](screenshots/Снимок экрана 2025-08-21 183702.png)
 
 ### Step 5: "Unstake" Tokens Using the API
 
@@ -88,84 +88,5 @@ Finally, we call the `/unstake` endpoint, proving the final piece of the API is 
 cargo run -- unstake --user $(solana address) --amount 50
 ```
 
-![Unstake Tokens](screenshots/unstaking.png)
+![Unstake Tokens](screenshots/Снимок экрана 2025-08-21 183720.png)
 
-## Installation and Setup
-
-### Prerequisites
-
-- Rust and Cargo (latest stable version)
-- Solana CLI tools
-- Node.js and npm (for optional frontend components)
-- Git
-
-### Getting Started
-
-1. Clone the repository:
-```bash
-git clone <repository-url>
-cd solana-dapp-staking
-```
-
-2. Install dependencies:
-```bash
-cargo build
-```
-
-3. Set up environment variables:
-```bash
-cp .env.example .env
-# Edit .env with your configuration
-```
-
-4. Build and deploy the smart contract:
-```bash
-anchor build
-anchor deploy
-```
-
-5. Start the backend server:
-```bash
-cargo run --bin server
-```
-
-6. Use the CLI interface:
-```bash
-cargo run -- --help
-```
-
-## API Endpoints
-
-The backend exposes the following RESTful endpoints:
-
-- `POST /stake` - Stake tokens
-- `POST /unstake` - Unstake tokens
-- `GET /balance/{user_address}` - Check staked balance
-
-## Project Structure
-
-```
-├── programs/                 # Solana programs (smart contracts)
-├── src/
-│   ├── bin/
-│   │   ├── server.rs        # Backend API server
-│   │   └── cli.rs           # Command-line interface
-│   └── lib.rs               # Shared library code
-├── tests/                   # Integration tests
-├── migrations/              # Deployment scripts
-└── scripts/                 # Utility scripts
-```
-
-## Contributing
-
-Contributions are welcome! Please feel free to submit a Pull Request.
-
-## License
-
-This project is licensed under the MIT License - see the LICENSE file for details.
-
-## Acknowledgments
-
-- Solana Labs for the excellent developer tools
-- The Anchor framework team
-- The Rust community for incredible resources and support
